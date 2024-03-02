@@ -7,7 +7,7 @@ const SPRINT_SPEED = 8.0
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 8.0
 const SENSITIVITY = 0.003
 
 # bob variables
