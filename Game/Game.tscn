@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7ot7xld4egpd"]
+
+[ext_resource type="Script" path="res://Game/Game.gd" id="1_wp3yk"]
+[ext_resource type="PackedScene" uid="uid://g0luhraa05w2" path="res://Player/Player.tscn" id="2_lybmb"]
+[ext_resource type="PackedScene" uid="uid://bhodyibm3epqu" path="res://Scenery/Small House/Small House.tscn" id="3_uc8ac"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bb2v"]
+albedo_color = Color(0, 0.34902, 0.152941, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ha4k6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_y4ul2"]
+sky_material = SubResource("ProceduralSkyMaterial_ha4k6")
+
+[sub_resource type="Environment" id="Environment_tmhq7"]
+background_mode = 2
+sky = SubResource("Sky_y4ul2")
+tonemap_mode = 2
+fog_light_color = Color(0.380392, 0.576471, 0.72549, 1)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_wp3yk")
+player_scene = ExtResource("2_lybmb")
+
+[node name="Map" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47618, 0, 0)
+
+[node name="SmallHouse" parent="Map" instance=ExtResource("3_uc8ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91972, 0.000499994, -0.512754)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4995, 0)
+material_override = SubResource("StandardMaterial3D_2bb2v")
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map"]
+environment = SubResource("Environment_tmhq7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(0.793417, -0.153134, 0.589101, -0.579594, -0.485673, 0.654364, 0.185904, -0.860623, -0.474097, 10.7954, 18.784, -8.96626)
+shadow_enabled = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../Players")
+
+[node name="Players" type="Node" parent="."]

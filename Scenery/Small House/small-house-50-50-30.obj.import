@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bh1e6ep138hkg"
+path="res://.godot/imported/small-house-50-50-30.obj-e714aa20addce5ef84c9bc0511d14338.mesh"
+
+[deps]
+
+files=["res://.godot/imported/small-house-50-50-30.obj-e714aa20addce5ef84c9bc0511d14338.mesh"]
+
+source_file="res://Scenery/Small House/small-house-50-50-30.obj"
+dest_files=["res://.godot/imported/small-house-50-50-30.obj-e714aa20addce5ef84c9bc0511d14338.mesh", "res://.godot/imported/small-house-50-50-30.obj-e714aa20addce5ef84c9bc0511d14338.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

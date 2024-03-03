@@ -1,18 +1,18 @@
 extends CharacterBody3D
 
 
-const WALK_SPEED = 3.0
+const WALK_SPEED = 4.0
 const SPRINT_SPEED = 8.0
 
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
-const JUMP_VELOCITY = 8.0
+const JUMP_VELOCITY = 4.0
 const SENSITIVITY = 0.003
 
 # bob variables
-const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
+const BOB_FREQ = 4.0
+const BOB_AMP = 0.04
 var t_bob = 0.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

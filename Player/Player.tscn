@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://g0luhraa05w2"]
 
-[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_0q12t"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_anacn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_316ke"]
 
@@ -14,7 +14,8 @@ properties/0/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01401, 0)
-script = ExtResource("1_0q12t")
+floor_max_angle = 1.0472
+script = ExtResource("1_anacn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_316ke")
