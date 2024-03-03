@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy5t4upkt22h6"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_ukot6"]
+[ext_resource type="PackedScene" uid="uid://g0luhraa05w2" path="res://Player.tscn" id="2_wandl"]
+
+[sub_resource type="Theme" id="Theme_pewi4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukot6")
+player_scene = ExtResource("2_wandl")
+
+[node name="Host" type="Button" parent="."]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 339.0
+offset_right = 591.0
+offset_bottom = 370.0
+theme = SubResource("Theme_pewi4")
+text = "Host
+"
+
+[node name="Join" type="Button" parent="."]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 400.0
+offset_right = 594.0
+offset_bottom = 431.0
+theme = SubResource("Theme_pewi4")
+text = "Join
+"
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]

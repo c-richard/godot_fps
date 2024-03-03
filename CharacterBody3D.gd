@@ -21,8 +21,15 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+func _enter_tree():
+	set_multiplayer_authority(name.to_int())
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
+	
+	if is_multiplayer_authority():
+		camera.current = true
+	
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -31,6 +38,9 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	
 func _physics_process(delta):
+	if is_multiplayer_authority() != true:
+		return
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
