@@ -44,6 +44,7 @@ transform = Transform3D(0.793417, -0.153134, 0.589101, -0.579594, -0.485673, 0.6
 shadow_enabled = true
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Player/Player.tscn")
 spawn_path = NodePath("../Players")
 
 [node name="Players" type="Node" parent="."]
